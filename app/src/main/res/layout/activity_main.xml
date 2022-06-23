@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CD515050"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="203dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="177dp"
-        android:text="Result = 0"
+        android:layout_width="403dp"
+        android:layout_height="88dp"
+        android:layout_marginBottom="172dp"
+        android:text="@string/result_0"
         android:textAlignment="center"
-        android:textColor="#F3680202"
+        android:textColor="#212121"
         android:textColorHint="#ED1C1919"
-        android:textSize="30sp"
+        android:textSize="33sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number2Text" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/number1Text"
@@ -27,82 +27,97 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:layout_marginBottom="30dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Enter number!"
         android:inputType="number"
         android:minHeight="48dp"
-        android:textColorHint="#B0005E18"
+        android:textColorHint="#FFFF8D"
         app:layout_constraintBottom_toTopOf="@+id/number2Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/number2Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="169dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Enter number!"
         android:inputType="number"
         android:minHeight="48dp"
-        android:textColorHint="#B0005E18"
+        android:textColorHint="#FFFF8D"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/number1Text"
-        app:layout_constraintTop_toBottomOf="@+id/number1Text" />
+        app:layout_constraintTop_toBottomOf="@+id/number1Text"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="305dp"
-        android:layout_height="86dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="345dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="52dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number2Text">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
-            android:layout_width="56dp"
+            android:layout_width="65dp"
             android:layout_height="62dp"
             android:layout_margin="10dp"
-            android:backgroundTint="#C3A008"
+
+            android:background="@drawable/button_shape"
             android:onClick="sum"
             android:text="+"
-            android:textColor="#4E342E"
+            android:textColor="#212121"
             android:textColorLink="#570B0B"
-            app:rippleColor="#B81212" />
+            android:textSize="28sp"
+            app:rippleColor="#B81212"
+            tools:ignore="HardcodedText" />
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button2"
-            android:layout_width="56dp"
+            android:layout_width="65dp"
             android:layout_height="62dp"
             android:layout_margin="10dp"
-            android:backgroundTint="#C3A008"
+
+            android:background="@drawable/button_shape"
             android:onClick="subtraction"
             android:text="-"
-            android:textColor="#4E342E" />
+            android:textColor="#212121"
+            android:textSize="32sp"
+            tools:ignore="HardcodedText,TextContrastCheck" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"
-            android:layout_width="56dp"
+            android:layout_width="65dp"
             android:layout_height="62dp"
             android:layout_margin="10dp"
-            android:backgroundTint="#C3A008"
+
+            android:background="@drawable/button_shape"
             android:onClick="multiply"
             android:text="*"
-            android:textColor="#4E342E" />
+            android:textColor="#212121"
+            android:textSize="32sp"
+            tools:ignore="HardcodedText" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button5"
-            android:layout_width="56dp"
+            android:layout_width="65dp"
             android:layout_height="62dp"
             android:layout_margin="10dp"
-            android:backgroundTint="#C3A008"
-            android:onClick="devide"
+
+            android:background="@drawable/button_shape"
+            android:onClick="divide"
             android:text="/"
-            android:textColor="#4E342E" />
+            android:textColor="#212121"
+            android:textSize="32sp"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
