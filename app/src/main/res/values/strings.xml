@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="result_0">Result = 0</string>
+    <string name="enter_number">Enter number!</string>
+    <string name="sum">+</string>
+    <string name="sub">-</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
 </resources>

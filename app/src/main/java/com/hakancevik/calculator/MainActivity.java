@@ -10,12 +10,13 @@ import android.view.View;
 import com.hakancevik.calculator.databinding.ActivityMainBinding;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    double number1, number2, result=0.0;
+    double number1, number2, result = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void sum(View view) {
-        if (binding.number1Text.getText().toString().matches("") || binding.number2Text.getText().toString().matches("")) {
+        if (Objects.requireNonNull(binding.number1Text.getText()).toString().matches("") || Objects.requireNonNull(binding.number2Text.getText()).toString().matches("")) {
             binding.textView.setText("Please, Enter a Number!");
-        }
-        else {
+        } else {
             number1 = Double.parseDouble(binding.number1Text.getText().toString());
             number2 = Double.parseDouble(binding.number2Text.getText().toString());
 
@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void subtraction(View view) {
-        if (binding.number1Text.getText().toString().matches("") || binding.number2Text.getText().toString().matches("")) {
+        if (Objects.requireNonNull(binding.number1Text.getText()).toString().matches("") || Objects.requireNonNull(binding.number2Text.getText()).toString().matches("")) {
             binding.textView.setText("Please, Enter a Number!");
-        }
-        else {
+        } else {
             number1 = Double.parseDouble(binding.number1Text.getText().toString());
             number2 = Double.parseDouble(binding.number2Text.getText().toString());
 
@@ -67,10 +66,9 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void multiply(View view) {
 
-        if (binding.number1Text.getText().toString().matches("") || binding.number2Text.getText().toString().matches("")) {
+        if (Objects.requireNonNull(binding.number1Text.getText()).toString().matches("") || Objects.requireNonNull(binding.number2Text.getText()).toString().matches("")) {
             binding.textView.setText("Please, Enter a Number!");
-        }
-        else {
+        } else {
             number1 = Double.parseDouble(binding.number1Text.getText().toString());
             number2 = Double.parseDouble(binding.number2Text.getText().toString());
 
@@ -86,20 +84,17 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void divide(View view) {
 
-        if (binding.number1Text.getText().toString().matches("") || binding.number2Text.getText().toString().matches("")) {
+        if (Objects.requireNonNull(binding.number1Text.getText()).toString().matches("") || Objects.requireNonNull(binding.number2Text.getText()).toString().matches("")) {
             binding.textView.setText("Please, Enter a Number!");
-        }
-        else {
+        } else {
             number1 = Double.parseDouble(binding.number1Text.getText().toString());
             number2 = Double.parseDouble(binding.number2Text.getText().toString());
 
-            if (number1 !=0 && number2 !=0 ){
+            if (number1 != 0 && number2 != 0) {
                 result = number1 / number2;
                 binding.textView.setText("Result = " + result);
 
-            }
-
-            else if (number1 != 0) {
+            } else if (number1 != 0) {
                 binding.textView.setText("Result = Undefined!");
             }
 

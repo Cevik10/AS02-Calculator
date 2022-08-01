@@ -4,71 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#666B6E"
+    android:background="#4C6A83"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/custom_text_line"
         android:text="@string/result_0"
         android:textAlignment="center"
         android:textColor="#212121"
         android:textColorHint="#ED1C1919"
         android:textSize="33sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <EditText
-        android:id="@+id/number1Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:layout_marginBottom="30dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="Enter number!"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textColorHint="#FFFF8D"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toTopOf="@+id/number2Text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+    <com.google.android.material.textfield.TextInputLayout
 
-    <EditText
-        android:id="@+id/number2Text"
-        android:layout_width="wrap_content"
+        android:id="@+id/textNumberLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="Enter number!"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textColorHint="#FFFF8D"
-        android:textSize="23sp"
+
+        android:layout_marginTop="67dp"
+        android:hint="@string/enter_number"
+
+        android:paddingHorizontal="30dp"
+        android:textColorHint="#FFFFFF"
+
+
+        app:hintTextColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/number1Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#07000000"
+            android:ems="10"
+            android:inputType="number"
+            android:padding="13dp"
+            android:textSize="23sp"
+
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textNumber2Layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="27dp"
+        android:hint="@string/enter_number"
+
+        android:paddingHorizontal="30dp"
+        android:textColorHint="#FFFFFF"
+
+
+        app:hintTextColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number1Text"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/textNumberLayout">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/number2Text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#07000000"
+            android:ems="10"
+            android:inputType="number"
+            android:padding="13dp"
+            android:textSize="23sp"
+
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="27dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number2Text">
+        app:layout_constraintTop_toBottomOf="@+id/textNumber2Layout">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
@@ -78,12 +116,10 @@
 
             android:background="@drawable/button_shape"
             android:onClick="sum"
-            android:text="+"
+            android:text="@string/sum"
             android:textColor="#212121"
-            android:textColorLink="#570B0B"
             android:textSize="28sp"
-            app:rippleColor="#B81212"
-            tools:ignore="HardcodedText" />
+            app:rippleColor="#B81212" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -91,13 +127,11 @@
             android:layout_width="65dp"
             android:layout_height="62dp"
             android:layout_margin="10dp"
-
             android:background="@drawable/button_shape"
             android:onClick="subtraction"
-            android:text="-"
+            android:text="@string/sub"
             android:textColor="#212121"
-            android:textSize="32sp"
-            tools:ignore="HardcodedText,TextContrastCheck" />
+            android:textSize="32sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"
@@ -107,10 +141,9 @@
 
             android:background="@drawable/button_shape"
             android:onClick="multiply"
-            android:text="*"
+            android:text="@string/multiply"
             android:textColor="#212121"
-            android:textSize="32sp"
-            tools:ignore="HardcodedText" />
+            android:textSize="32sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button5"
@@ -120,9 +153,8 @@
 
             android:background="@drawable/button_shape"
             android:onClick="divide"
-            android:text="/"
+            android:text="@string/divide"
             android:textColor="#212121"
-            android:textSize="32sp"
-            tools:ignore="HardcodedText" />
+            android:textSize="32sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
